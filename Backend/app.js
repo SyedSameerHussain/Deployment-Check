@@ -37,7 +37,11 @@ app.get("/env-check", (req, res) => {
     });
 });
 
-
+app.get("/check-post", (req, res) => {
+    res.json({
+        body: req.body
+    });
+});
 
 
 app.get("/", (req, res) => {
