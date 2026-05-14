@@ -7,7 +7,17 @@ import cors from "cors";
 const app = express();
 config({ path: ".env" });
 
-app.use(cors());
+app.use(cors({
+    origin: [
+        "http://localhost:5173",
+        "http://localhost:5174",
+        "https://zeelab.vercel.app",
+        "https://deployment-check-6grq.vercel.app"
+    ],
+    credentials: true,
+    methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
+    allowedHeaders: ["Content-Type", "Authorization"],
+}));
 console.log("hello backend")
 app.use((req, res, next) => {
     console.log("REQ:", req.method, req.url, "ORIGIN:", req.headers.origin);
