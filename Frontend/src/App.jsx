@@ -8,8 +8,8 @@ function App() {
   const [count, setCount] = useState(0)
   let API_URL = import.meta.env.VITE_BACKEND_URL;
   console.log('All env vars:', import.meta.env);
-  console.log('Backend URL:', import.meta.env.VITE_BACKEND_URL);  
-  const fetchFunction = async () => {
+  console.log('Backend URL:', import.meta.env.VITE_BACKEND_URL);
+  const fetchPostFunction = async () => {
     const res = await fetch(`${API_URL}/check-post`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
@@ -21,9 +21,14 @@ function App() {
     const data = await res.json();
     console.log(data)
   }
+  const fetchGetFunction = async () => {
+    const res = await fetch(`${API_URL}/env-check`);
+    const data = await res.json();
+    console.log(data)
+  }
   useEffect(() => {
-    fetchFunction();
-
+    fetchPostFunction();
+    fetchGetFunction();
   }, [])
 
 
