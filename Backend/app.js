@@ -13,7 +13,7 @@ app.use(cors({
         "http://localhost:5174",
         "https://zeelab.vercel.app",
         "https://deployment-check-6grq.vercel.app",
-        "https://cozy-florentine-857e6c.netlify.app"
+        "https://cozy-florentine-857e6c.netlify.app" 
     ],
     credentials: true,
     methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
