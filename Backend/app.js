@@ -7,7 +7,7 @@ import cors from "cors";
 const app = express();
 config({ path: ".env" });
 
-app.use(cors());
+app.use(cors({}));
 console.log("hello backend")
 app.use((req, res, next) => {
     console.log("REQ:", req.method, req.url, "ORIGIN:", req.headers.origin);
