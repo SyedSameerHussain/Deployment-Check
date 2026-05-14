@@ -12,6 +12,7 @@ app.use(cors({
     methods: ['GET', 'POST', 'PUT', 'DELETE', 'PATCH', 'OPTIONS'],
     allowedHeaders: ['Content-Type', 'Authorization']
 }));
+app.options('*', cors());
 console.log("hello backend")
 app.use((req, res, next) => {
     console.log("REQ:", req.method, req.url, "ORIGIN:", req.headers.origin);
