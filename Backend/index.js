@@ -54,7 +54,13 @@ import cookieParser from "cookie-parser";
 import { config } from "dotenv";
 const app = express();
 config({ path: ".env" });
-app.use(cors());
+app.use(cors({
+    origin: [
+        'https://cozy-florentine-857e6c.netlify.app'
+    ],
+    methods: ['GET', 'POST', 'PUT', 'DELETE', 'PATCH', 'OPTIONS'],
+    credentials: true
+}));
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
